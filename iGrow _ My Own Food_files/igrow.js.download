@@ -1,0 +1,140 @@
+		function delete_user()
+		{
+			var answer = confirm("Yakin ingin menghapus user? Seluruh data terkait akan terhapus!(seperti data kerja sama benih)")
+			return answer;		
+		} 
+		
+		function delete_package()
+		{
+			var answer = confirm("Yakin ingin menghapus kerja sama penanaman? Seluruh data terkait akan terhapus!(pesan dan transaksi kerja sama)")
+			return answer;		
+		} 
+		
+		function convertToRupiah(angka){
+			var rupiah = '';
+			var angkarev = angka.toString().split('').reverse().join('');
+			for(var i = 0; i < angkarev.length; i++) if(i%3 == 0) rupiah += angkarev.substr(i,3)+'.';
+				return  "Rp " +rupiah.split('',rupiah.length-1).reverse().join('')+",-";
+		}
+
+		
+		function delete_transaksi()
+		{
+			var answer = confirm("Yakin ingin menghapus transaksi? Data pembelian benih akan dihapus")
+			return answer;		
+		} 
+		
+		function delete_deposit()
+		{
+			var answer = confirm("Yakin ingin menghapus transaksi deposit?")
+			return answer;		
+		} 
+		
+		function active_user()
+		{
+			var answer = confirm("Yakin ingin mengaktifkan kembali user?")
+			return answer;		
+		} 
+		
+		function active_package()
+		{
+			var answer = confirm("Yakin ingin mengaktifkan kembali kerja sama ini?")
+			return answer;		
+		} 
+		
+		
+		function change_user()
+		{
+			var answer = confirm("Yakin ingin mengganti data user?")
+			return answer;		
+		} 
+		
+		function forgot_password()
+		{
+			var answer = confirm("Yakin ingin mereset password anda?")
+			return answer;		
+		} 
+		
+		function imageError()
+		{
+			var answer = confirm("image error")
+			return answer;	
+		} 
+		
+		function delete_type_seed()
+		{
+			var answer = confirm("Yakin ingin menghapus benih ini? Seluruh data terkait akan terhapus!(seperti data kerja sama benih)")
+			return answer;		
+		}
+		
+		function delete_land()
+		{
+			var answer = confirm("Yakin ingin menghapuslokasi ini? Seluruh data terkait akan terhapus!(seperti data kerja sama benih)")
+			return answer;		
+		}
+		
+		function update_location()
+		{
+			var answer = confirm("Yakin ingin mengupdate lokasi ini? Seluruh data terkait akan berubah!(seperti data kerja sama benih)")
+			return answer;		
+		}
+		
+		function konfirmasi_deposit()
+		{
+			var answer = confirm("Yakin ingin menyetujui pembayaran deposit?")
+			return answer;		
+		} 
+		
+		function konfirmasi_pembayaran()
+		{
+			var answer = confirm("Yakin ingin menyetujui pembayaran pembelian benih?")
+			return answer;		
+		} 
+		
+		function buy_seed()
+		{
+			var answer = confirm("Yakin ingin membeli bibit?")
+			return answer;		
+		} 
+		
+		function add_location()
+		{
+			var answer = confirm("Yakin ingin menambah lokasi?")
+			return answer;		
+		}
+
+		function add_rp(nStr, dollar){
+			nStr += '';
+			x = nStr.split('.');
+			x1 = x[0];
+			x2 = x.length > 1 ? '.' + x[1] : '';
+			var rgx = /(\d+)(\d{3})/;
+			while (rgx.test(x1)) {
+				x1 = x1.replace(rgx, '$1' + ',' + '$2');
+			}
+
+			if(dollar) {
+				return "$ "+ x1 + x2;
+			}
+
+			return "Rp " + x1 + x2;
+		}
+
+		// Remove Formatted money back to integer
+		// Function name or currency could be changed anytime
+
+		function remove_rp(txt){
+			if(typeof(txt) === "undefined") {
+				 return 0;
+			}
+
+			var numb = txt.match(/\d/g);
+			if(!numb){
+				return 0
+			}
+			numb = parseInt(numb.join(""));
+			
+
+			return numb ? numb : 0;
+		}
+
